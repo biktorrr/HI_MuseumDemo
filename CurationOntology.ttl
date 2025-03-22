@@ -1,0 +1,214 @@
+@prefix : <http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13/> .
+@prefix aat: <http://vocab.getty.edu/aat/> .
+@prefix crm: <http://www.cidoc-crm.org/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13/> .
+
+<http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.cidoc-crm.org/P108i_was_produced_by
+crm:P108i_was_produced_by rdf:type owl:ObjectProperty ;
+                          rdfs:domain :HeritageObject ;
+                          rdfs:range crm:E12_Production .
+
+
+###  http://www.cidoc-crm.org/P138_represents
+crm:P138_represents rdf:type owl:ObjectProperty ;
+                    owl:inverseOf crm:P138i_has_representation ;
+                    rdfs:domain crm:E36_Visual_Item ;
+                    rdfs:range crm:E1_CRM_Entity ;
+                    rdfs:comment "Property used to describe that a Visual element of the painting represents something else. For example: the person portrayed represents King Caspar, one of the Magi." .
+
+
+###  http://www.cidoc-crm.org/P138i_has_representation
+crm:P138i_has_representation rdf:type owl:ObjectProperty ;
+                             rdfs:domain crm:E1_CRM_Entity ;
+                             rdfs:range crm:E36_Visual_Item .
+
+
+###  http://www.cidoc-crm.org/P14_carried_out_by
+crm:P14_carried_out_by rdf:type owl:ObjectProperty ;
+                       rdfs:domain crm:E12_Production ;
+                       rdfs:range crm:E21_Person .
+
+
+###  http://www.cidoc-crm.org/P15_was_influenced_by
+crm:P15_was_influenced_by rdf:type owl:ObjectProperty ;
+                          rdfs:domain crm:E12_Production ;
+                          rdfs:range crm:E21_Person .
+
+
+###  http://www.cidoc-crm.org/P16i_was_used_for
+crm:P16i_was_used_for rdf:type owl:ObjectProperty ;
+                      owl:inverseOf :P16_used_specific_object ;
+                      rdfs:domain :CuratorialNarrative ;
+                      rdfs:range crm:E7_Activity .
+
+
+###  http://www.cidoc-crm.org/P1_is_identified_by
+crm:P1_is_identified_by rdf:type owl:ObjectProperty ;
+                        rdfs:domain crm:E55_Type ,
+                                    crm:E7_Activity ;
+                        rdfs:range <http://vocab.getty.edu/aat/300054766> ,
+                                   crm:E33_E41_Linguistic_Appellation .
+
+
+###  http://www.cidoc-crm.org/P2_has_type
+crm:P2_has_type rdf:type owl:ObjectProperty ;
+                rdfs:domain crm:E7_Activity ;
+                rdfs:range crm:E55_Type .
+
+
+###  http://www.cidoc-crm.org/P4_has_Time-span
+crm:P4_has_Time-span rdf:type owl:ObjectProperty ;
+                     rdfs:domain crm:E12_Production ;
+                     rdfs:range crm:E52_Time-Span .
+
+
+###  http://www.cidoc-crm.org/P65_shows_visual_item
+crm:P65_shows_visual_item rdf:type owl:ObjectProperty ;
+                          owl:inverseOf crm:P65i_is_shown_by ;
+                          rdfs:domain :HeritageObject ;
+                          rdfs:range crm:E21_Person ,
+                                     crm:E36_Visual_Item .
+
+
+###  http://www.cidoc-crm.org/P65i_is_shown_by
+crm:P65i_is_shown_by rdf:type owl:ObjectProperty ;
+                     rdfs:domain crm:E36_Visual_Item ;
+                     rdfs:range :HeritageObject .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13#P16_used_specific_object
+:P16_used_specific_object rdf:type owl:ObjectProperty ;
+                          rdfs:domain crm:E7_Activity ;
+                          rdfs:range :CuratorialNarrative ,
+                                     :HeritageObject .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13#P67i_is_referred_to_by
+:P67i_is_referred_to_by rdf:type owl:ObjectProperty ;
+                        rdfs:domain crm:E7_Activity ;
+                        rdfs:range crm:E33_E41_Linguistic_Appellation .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13#hasAssociatedHeritageObject
+:hasAssociatedHeritageObject rdf:type owl:ObjectProperty ;
+                             rdfs:domain :CuratorialNarrative ;
+                             rdfs:range :HeritageObject .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.cidoc-crm.org/P190_has_symbolic_content
+crm:P190_has_symbolic_content rdf:type owl:DatatypeProperty ;
+                              rdfs:domain crm:E33_E41_Linguistic_Appellation ;
+                              rdfs:range rdfs:Literal .
+
+
+###  http://www.cidoc-crm.org/P33_used_specific_technique
+crm:P33_used_specific_technique rdf:type owl:DatatypeProperty ;
+                                rdfs:domain crm:E12_Production ;
+                                rdfs:range rdfs:Literal .
+
+
+###  http://www.cidoc-crm.org/P82a_begin_of_the_begin
+crm:P82a_begin_of_the_begin rdf:type owl:DatatypeProperty ;
+                            rdfs:domain crm:E52_Time-Span ;
+                            rdfs:range rdfs:Literal .
+
+
+###  http://www.cidoc-crm.org/P82b_begin_of_the_end
+crm:P82b_begin_of_the_end rdf:type owl:DatatypeProperty ;
+                          rdfs:domain crm:E52_Time-Span ;
+                          rdfs:range rdfs:Literal .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13#hasInterpretation
+:hasInterpretation rdf:type owl:DatatypeProperty ;
+                   rdfs:domain crm:E36_Visual_Item ;
+                   rdfs:range rdfs:Literal .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:domain crm:E52_Time-Span ,
+                       crm:E7_Activity ,
+                       :HeritageObject ;
+           rdfs:range rdfs:Literal .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://vocab.getty.edu/aat/300054766
+<http://vocab.getty.edu/aat/300054766> rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E12_Production
+crm:E12_Production rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E1_CRM_Entity
+crm:E1_CRM_Entity rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E21_Person
+crm:E21_Person rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E22_Human-Made_Object
+crm:E22_Human-Made_Object rdf:type owl:Class ;
+                          owl:equivalentClass :HeritageObject .
+
+
+###  http://www.cidoc-crm.org/E33_E41_Linguistic_Appellation
+crm:E33_E41_Linguistic_Appellation rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E36_Visual_Item
+crm:E36_Visual_Item rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E52_Time-Span
+crm:E52_Time-Span rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E55_Type
+crm:E55_Type rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E7_Activity
+crm:E7_Activity rdf:type owl:Class .
+
+
+###  http://www.cidoc-crm.org/E89_Propositional_Object
+crm:E89_Propositional_Object rdf:type owl:Class ;
+                             owl:equivalentClass :CuratorialNarrative .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13#CuratorialNarrative
+:CuratorialNarrative rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty :hasAssociatedHeritageObject ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass :HeritageObject
+                                     ] .
+
+
+###  http://www.semanticweb.org/xln105/ontologies/2025/2/untitled-ontology-13#HeritageObject
+:HeritageObject rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
